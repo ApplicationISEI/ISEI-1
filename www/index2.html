@@ -33,15 +33,27 @@
         <div class="app">
             <h1>ISEI</h1>
             <div id="deviceready">
-                <b class="event listening">et voila la page deux</B>
-                <form name="GSM"action="index2.html"method="post">Rentrez votre numéro de téléphone<input id="num"><button>
-                <b class="event received">Bienvenue</b>
+                <b class="event listening">et voila la page deux</b>
+                <form
+                  name="GSM" action="index2.html"method="post">Rentrez votre numéro de téléphone
+                  <input id="num">
+                  <button>Save</button>
+                  <b class="event received">Bienvenue</b>
+                  </form>
+
+
+
             </div>
         </div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();
+            var champ = document.getelementById("num")
+            element.innerHTML = num
         </script>
+         
+          
+
     </body>
 </html>
