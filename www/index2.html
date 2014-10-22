@@ -19,8 +19,8 @@
                 
                 
                 </form>
-                <input id="num">
-                  <div id="output"></div>  <button onclick="main()">OK</button><br><br>
+                <input type= "tel" id="num">
+                  <div id="output"></div> <button onclick="main()">OK</button><br><br>
             </div>
         </div>
                 
@@ -36,7 +36,14 @@
                 // Reprendre la valeur du champ texte
                 var valeur = champ.value ;
                 
+				if(parseInt(valeur))
+				{
                 element.innerHTML = valeur ;
+				}
+				else
+				{
+				element.innerHTML = "Veuillez rentrer un numéro correcte";
+				}
             } 
         </script>
          

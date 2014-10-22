@@ -33,11 +33,24 @@
         <div class="app">
             <h1>ISEI</h1>
             <div id="deviceready">
-                <b class="event listening">Bienvenue</b>
-                <p class="event listening">Comment allez-vous ?</p> <br>
-                <p class="event listening"><button> <a href ="index2.html">Click hier</a> </button> <br> pour entrer un numéro </p> <br>
-				<p class="event listening"><button> <a href ="index3.html">Click hier</a> </button> <br> pour la modification dynamique du "div" </p>
-                <b class="event received">Bienvenue</b>
+				<p> Quel est votre problème? </p>
+				<script>
+				var tab = [];
+				tab[0] = "<a href=\"#\" onclick=\"javascript:AFFICHE('Mettez votre doigt sous l\\' eau.');\">Je me suis brulé</a> <br> <br>";
+				tab[1] = "<a href=\"#\" onclick=\"javascript:AFFICHE('Pansez la blessure');\">Je me suis coupé</a> <br> <br>";
+				tab[2] = "<a href=\"#\" onclick=\"javascript:AFFICHE('Appellez une ambulance');\">Je fais une crise cardiaque</a> <br> <br>";
+				for(var i = 0, c= tab.length; i<c;i++)
+				{
+					document.write(tab[i]);
+				}
+				</script>
+                
+				<div id="mon_div">Instructions à suivre.</div>
+				<script language="JavaScript" type="text/javascript">
+				function AFFICHE(mon_texte){
+				document.getElementById('mon_div').innerHTML = mon_texte;
+				}
+				</script>
             </div>
         </div>
         <script type="text/javascript" src="cordova.js"></script>
