@@ -13,22 +13,31 @@
     <body>
         <div class="app">
             <h1>ISEI</h1>
-            <div id="deviceready">
+            <div>
                 <b class="event listening">et voila la page deux</b>
-                <form
-                  name="GSM" action="index2.html"method="post">Rentrez votre numéro de téléphone
-                  <input type="numéro" name="num" id="num" >
-                  <button> Save</button>
-                  </form>
+                <form > Rentrez votre numéro de téléphone
+                
+                
+                </form>
+                <input id="num">
+                  <div id="output"></div>  <button onclick="main()">OK</button><br><br>
             </div>
         </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-            <script language="javascript" type="text/javascript">
-            function fct_afficher(num) 
-            var obj=document.getElementById(num);
+                
+        <script>
+            function main()
+            {
+            // trouver l'élément "output"
+                var element = document.getElementById("output");
+                
+                // reprendre le champ de texte 
+                var champ = document.getElementById("num");
+                
+                // Reprendre la valeur du champ texte
+                var valeur = champ.value ;
+                
+                element.innerHTML = valeur ;
+            } 
         </script>
          
           
