@@ -8,20 +8,19 @@
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css" />
         <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
-
     </head>
     <body>
     <div data-role="page" id="acceuil">
         <div data-role="header" data-theme="a">
             <h1> Hopital </h1>
             <a data-rel="back" data-icon="back">Retour</a>
-        </div><!-- /header -->   
-            <div data-role="content">
-                <a href="https://www.google.be/maps/search/hopital/" data-role="button" data-icon="arrow-r">Les plus proches</a>
-                <a href="Hopital/Specialise.html" data-role="button" data-icon="arrow-r">Spécialisé</a>
-                <a href="https://www.google.be/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=hospital" data-role="button" data-icon="arrow-r">Recherche</a>
-            </div><!-- /content -->   
+        </div><!-- /header --> 
+          
+           <div id="map" data-role="content">
+                 
+                <iframe src="https://www.google.com/maps/d/embed?mid=z3KGS9jRpI24.kRHiP3jQajoc" width="100%" height="100%" ></iframe>
 
+            </div><!-- /content --> 
  
 
         <div data-role="footer" data-theme="c" data-position="fixed" data-id="foot ">
@@ -39,6 +38,7 @@
          
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+
         <script type="text/javascript">
             app.initialize();
         </script>
