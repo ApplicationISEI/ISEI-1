@@ -8,18 +8,19 @@
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css" />
         <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
-
     </head>
     <body>
     <div data-role="page" id="acceuil">
         <div data-role="header" data-theme="a">
             <h1> Hopital </h1>
-            <a data-rel="back" data-icon="back">Retour</a>
+            <a data-role="button" href="../index.html"  data-icon="back">Retour</a>
         </div><!-- /header --> 
           
            <div id="map" data-role="content">
-                    <iframe src="https://www.google.com/maps/d/embed?mid=z3KGS9jRpI24.kRHiP3jQajoc" width="640" height="480"></iframe>
-        </div><!-- /content --> 
+                 
+                <iframe src="https://www.google.com/maps/d/embed?mid=z3KGS9jRpI24.kRHiP3jQajoc" width="100%" height="600" ></iframe>
+
+            </div><!-- /content --> 
  
 
         <div data-role="footer" data-theme="c" data-position="fixed" data-id="foot ">
@@ -37,6 +38,7 @@
          
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+
         <script type="text/javascript">
             app.initialize();
         </script>
