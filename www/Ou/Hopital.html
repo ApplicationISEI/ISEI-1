@@ -8,8 +8,31 @@
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css" />
         <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
+
+                <script type="text/javascript">
+            alert ('Bla');
+
+$(function() {
+        alert('Hello');
+        var map = $('#map');
+        map.height('100%');
+        
+        var h = $('html').height()-135;
+        map.children().css({
+            width:'100%',
+            height: h
+        });
+});
+
+
+app.initialize();
+    
+        </script>
     </head>
     <body>
+        <script type="text/javascript">
+            alert ('HKlmmlskd');
+        </script>
     <div data-role="page" id="acceuil">
         <div data-role="header" data-theme="a">
             <h1> Hopital </h1>
@@ -18,7 +41,7 @@
           
            <div id="map" data-role="content">
                  
-                <iframe src="https://www.google.com/maps/d/embed?mid=z3KGS9jRpI24.kRHiP3jQajoc" width="100%" height="600" ></iframe>
+                <iframe src="https://www.google.com/maps/d/embed?mid=z3KGS9jRpI24.kRHiP3jQajoc" width="100%" height="" ></iframe>
 
             </div><!-- /content --> 
  
@@ -37,10 +60,6 @@
                
          
         <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-
-        <script type="text/javascript">
-            app.initialize();
-        </script>
+        <script type="text/javascript" src="../js/index.js"></script>
     </body>
 </html>
