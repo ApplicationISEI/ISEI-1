@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title> Application ISEI </title>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css" />
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
+        
+    </head>
+    <body>
+	<div id = "contact"></div>
+    <script>
+		document.addListener("deviceready", onDeviceReady, false);
+		function onDeviceReady()
+		{
+			$("#contact").text(navigator.contacts);
+		}
+		//navigator.contacts.find(contactFields, contactSuccess, contactError, contactFindOptions);
+    </script>
+	</body>
+</html>
