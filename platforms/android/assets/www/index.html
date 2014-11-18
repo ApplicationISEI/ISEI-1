@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css" />
         <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
-        
+
     </head>
     <body>
     <div data-role="page" id="acceuil">
@@ -87,13 +87,6 @@
             </div>    
         </div><!-- /footer -->        
     </div>
-                      <div data-role="navbar" id="navbar2">
-                        <ul>
-                            <li><a  data-role="button" data-icon="home">Acceuil</a></li>
-                            <li><a  data-role="button" data-icon="location">où?</a></li>
-                         <li><a  data-role="button" data-icon="phone">Appels</a></li>
-                         </ul> 
-                     </div>  
 
 
     </div>   
@@ -103,10 +96,9 @@
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
-        
 
             var navbar1 = '<p>Je suis navbar 1</p>';
-             
+            var navbar2 = '<p>Je suis navbar 2</p>';
 
             $('#menu1 a').click (function(){
                 var action = $(this).attr('data-action');
@@ -118,7 +110,7 @@
                         var h = $('html').height() - 135;
                         $('#map').css ('height', h);
 
-                        $('#navbar')[0].innerHTML = navbar2 ;
+                        $('#navbar')[0].innerHTML = navbar2;
                     break;
                 }
             });
