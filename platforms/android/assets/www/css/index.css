@@ -37,37 +37,25 @@ body {
 }
 
 /* Portrait layout (default) */
-.ui-icon-Telephone {
-    background:url(../img/call7.png) no-repeat center top; /* 170px x 200px */
+.app {
+    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
     position:absolute;             /* position in the center of the screen */
-    left:auto;
-    top:auto;
-    height:128px;                   /* text area height */
-    width:128px;                   /* text area width */
+    left:50%;
+    top:48%;
+    height:50px;                   /* text area height */
+    width:225px;                   /* text area width */
     text-align:center;
     padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
     margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
                                    /* offset horizontal: half of text area width */
 }
-.ui-icon-Geoloc {
-    background:url(../img/locate.png) no-repeat center top; /* 170px x 200px */
+.app1 {
+    background:url(../img/logo1.png) no-repeat center top; /* 170px x 200px */
     position:absolute;             /* position in the center of the screen */
-    left:auto;
-    top:auto;
-    height:128px;                   /* text area height */
-    width:128px;                   /* text area width */
-    text-align:center;
-    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
-    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
-                                   /* offset horizontal: half of text area width */
-}
-.ui-icon-Facebook {
-    background:url(../img/Twit.png) no-repeat center top; /* 170px x 200px */
-    position:absolute;             /* position in the center of the screen */
-    left:auto;
-    top:auto;
-    height:128px;                   /* text area height */
-    width:128px;                   /* text area width */
+    left:45%;
+    top:73%;
+    height:175px;                   /* text area height */
+    width:263px;                   /* text area width */
     text-align:center;
     padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
     margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */

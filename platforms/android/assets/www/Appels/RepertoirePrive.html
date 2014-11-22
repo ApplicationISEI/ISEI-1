@@ -13,7 +13,7 @@
     <body>
     <div data-role="page" id="acceuil">
         <div data-role="header" data-theme="a">
-            <h1> Numéro Utiles </h1>
+            <h1> Répertoire Privé </h1>
             <a data-rel="back" data-icon="back">Retour</a>
         </div><!-- /header -->   
        
@@ -24,12 +24,28 @@
             <div data-role="navbar">
                 <ul>
                     <li><a href="#acceuil" data-role="button" data-icon="home">Acceuil</a></li>
-                    <li><a href="#page1" data-role="button" data-icon="location">Où?</a></li>
-                    <li><a href="Gestes_d'urgences/GdUrg.html" data-role="button" data-icon="plus">Gestes d'urgences</a></li>
-                    <li><a href="Fiche_medicale/FichMed.html" data-role="button" data-icon="bars">Fiche médicale</a></li>
+                    <li><a href="#page1" data-role="button" data-icon="location">où ?</a></li>
+                    <li><a class="ui-btn-active ui-state-persist" href="#page2" data-role="button" data-icon="phone">Appels</a></li>
                 </ul> 
-            </div>   
-        </div><!-- /footer -->                        
+            </div>    
+        </div><!-- /footer -->     
+        <div>
+            <h1>Monday ContactChooser</h1>
+            <div>
+                <button onclick="alertContact()">Get Contact</button>
+            </div>
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="ContactChooser.js"></script>
+        <script>
+            function alertContact() {
+                window.plugins.ContactChooser.chooseContact(function(contactInfo) {
+                    setTimeout(function() { // use timeout to fix iOS alert problem
+                        alert(contactInfo.displayName + " " + contactInfo.email + " " + contactInfo.phoneNumber);
+                    }, 0);
+                });
+            }
+        </script>
     </div>   
 
                
