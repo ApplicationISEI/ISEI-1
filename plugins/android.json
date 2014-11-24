@@ -35,10 +35,4 @@
             }
         }
     },
-    "installed_plugins": {
-        "org.apache.cordova.contacts": {
-            "PACKAGE_NAME": "com.phonegap.helloworld"
-        }
-    },
-    "dependent_plugins": {}
-}
+    
