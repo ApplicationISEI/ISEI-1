@@ -1,47 +1,264 @@
 <!DOCTYPE html>
-<!--
-    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
-
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
     <head>
         <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="msapplication-tap-highlight" content="no" />
-        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title> Application ISEI </title>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css" />
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
+        
     </head>
     <body>
-        <div class="app">
-            <h1>ISEI</h1>
-            <div id="deviceready" class="blink">
-                <b class="event listening">Bienvenue</b>
-                <p class="event listening">Comment allez-vous ?</p>
-                <a class="envent listening">Clicez <button> <a href ="index2.html">ici</a> </button> pour continuer</a>
-                <b class="event received">Bienvenue</b>
-            </div>
+    <div data-role="page">
+        
+        <div data-role="header" data-theme="a" id="h" >
+            <h1> Urgence </h1>
+            <a  data-icon="back" id="backbutton" style="display :none">Retour</a>
+            
         </div>
+<!-- /header -->   
+
+        <div data-role="content" id="accueilc">
+            <h1><center>Bievenue dans le projet android</center></h1>
+            <center>En partenariat avec l'ISEI</center>
+        </div>
+
+        <div data-role="content" id="ouc" style="display: none">
+            <a data-action="hopital" data-role="button" data-icon="arrow-r">Hopital</a>
+            <a href="Ou/InfirmereIndependante.html" data-role="button" data-icon="arrow-r">Infirmière Independante</a>
+            <a href="Ou/Medecin.html" data-role="button" data-icon="arrow-r">Médecin</a>
+            <a href="Ou/BorneArretUrgence.html" data-role="button" data-icon="arrow-r">Borne d'arrêt d'urgence???</a>
+            <a href="Ou/Pharmacie.html" data-role="button" data-icon="arrow-r">Pharmacie</a>
+        </div>
+
+        <div data-role="content" id="mapc" style="display: none">
+        </div>
+
+        <div data-role="content" id="appelc" style="display: none">
+            <a href="Appels/RepertoirePrive.html" data-role="button" data-icon="arrow-r">Répertoire Privé</a>
+            <a href="Appels/RepertoireUrgence.html" data-role="button" data-icon="arrow-r">Répertoire Urgence</a>
+            <a href="Appels/NumeroUtiles.html" data-role="button" data-icon="arrow-r">Numéro Utiles</a>
+            <a href="Appels/Internet.html" data-role="button" data-icon="arrow-r">Internet</a>
+        </div>
+<!-- /content -->    
+
+        <div data-role="footer" data-theme="c" data-position="fixed" data-id="foot " id="navbar">
+            <div data-role="navbar">
+                <ul>
+                    <li><a class="ui-btn-active ui-state-persist" data-role="button" data-icon="home" id="baccueil">Accueil</a></li>
+                    <li><a data-role="button" data-icon="location" id="bou">où ?</a></li>
+                    <li><a data-role="button" data-icon="phone" id="bappel">Appels</a></li>
+                </ul> 
+            </div>    
+        </div>
+
+        <div data-role="footer" data-theme="c" data-position="fixed" data-id="foot " id="navbarmap" style="display: none">
+                      <div data-role="navbar">
+                        <ul>
+                            <li><a  data-role="button" data-icon="location" id="location">Ou suis-je?</a></li>
+                            <li><a  data-role="button" data-icon="phone" id="googlemap" >Ouvrir dans google map</a></li>
+                         </ul> 
+                     </div>
+        </div>
+    </div>
+
+         
+<!-- /footer -->                        
+
+               
+         
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
+
+            function showOu(){
+
+                
+                $('#accueilc').hide();
+                $('#appelc').hide();
+                $('#mapc').hide();
+                $('#ouc').show();
+                $('#navbarmap').hide();
+                $('#backbutton').hide();
+
+
+                whereami = 'ou';
+                
+               // $('#navbaraccueil ul li:nth-child(2) a').addClass("ui-btn-active ui-state-persist")
+              //$('#navbaraccueil ul li:nth-child(1) a').removeClass("ui-btn-active ui-state-persist")
+                }
+
+
+            $('#bou').click(showOu);  
+
+            $('#bappel').click(function(){
+               
+
+
+                $('#accueilh').hide();
+                $('#ouh').hide();
+                $('#appelh').show();
+                $('#accueilc').hide();
+                $('#ouc').hide();
+                $('#appelc').show();
+                $('#navbarmap').hide();
+                $('#backbutton').hide();
+
+             });
+
+            $('#baccueil').click(function(){
+               
+
+
+                $('#appelh').hide();
+                $('#ouh').hide();
+                $('#accuelh').show();
+                $('#appelc').hide();
+                $('#ouc').hide();
+                $('#accueilc').show();
+                $('navbarmap').hide();
+                $('#backbutton').hide();
+             });
+
+
+
+
+        
+            
+            var whereami = 'home';             
+
+
+            $('#backbutton').click(function(){
+
+                switch (whereami)
+                {
+                    case 'hopital':
+                        showOu();
+                    break;
+
+                    case 'InfirmereIndependante':
+                        showOu();
+                    break 
+
+                    case 'Medecin':
+                        showOu();
+                    break;
+
+                    case 'BorneArretUrgence':
+                        showOu();
+                    break;
+
+                    case 'Pharmacie':
+                        showOu();
+                    break;
+
+
+                }
+            });
+
+            
+            $('#ouc a:nth-child(1)').click (function(){
+                        $('#ouc').hide();
+                        $('#mapc')[0].innerHTML = '<iframe src="https://www.google.com/maps/d/embed?mid=z3KGS9jRpI24.kRHiP3jQajoc" id="map" width="100%"></iframe>';
+                        $('#mapc').show();
+
+                        var h = $('html').height() - 135;
+                        $('#map').css ('height', h);
+
+                        $('#navbarou').hide();
+                        $('#navbarmap').show(); 
+                        $('#backbutton').show();
+                        whereami = 'hopital'           
+            });
+
+            $('#ouc a:nth-child(2)').click (function(){
+                        $('#ouc').hide();
+                        $('#mapc')[0].innerHTML = '<iframe src="https://mapsengine.google.com/map/embed?mid=z3KGS9jRpI24.kvZzlrX5gQig" id="map2" width="100%"></iframe>';
+                        $('#mapc').show();
+
+                        var h = $('html').height() - 135;
+                        $('#map2').css ('height', h);
+
+                        $('#navbarou').hide();
+                        $('#navbarmap').show();
+                        $('#backbutton').show(); 
+                         whereami = 'InfirmereIndependante'           
+            });
+
+            $('#ouc a:nth-child(3)').click (function(){
+                        $('#ouc').hide();
+                        $('#mapc')[0].innerHTML = '<iframe src="https://mapsengine.google.com/map/embed?mid=z3KGS9jRpI24.kmLK3LOHEsl0" id="map3" width="100%"></iframe>';
+                        $('#mapc').show();
+
+                        var h = $('html').height() - 135;
+                        $('#map3').css ('height', h);
+
+                        $('#navbarou').hide();
+                        $('#navbarmap').show();
+                        $('#backbutton').show();
+                        whereami = 'Medecin'            
+            });
+
+            $('#ouc a:nth-child(4)').click (function(){
+                        $('#ouc').hide();
+                        $('#mapc')[0].innerHTML = '<iframe src="https://www.google.com/maps/d/embed?mid=z3KGS9jRpI24.kRHiP3jQajoc" id="map" width="100%"></iframe>';
+                        $('#mapc').show();
+
+                        var h = $('html').height() - 135;
+                        $('#map').css ('height', h);
+
+                        $('#navbarou').hide();
+                        $('#navbarmap').show();
+                        $('#backbutton').show();
+                        whereami ='BorneArretUrgence'            
+            });
+
+            $('#ouc a:nth-child(5)').click (function(){
+                        $('#ouc').hide();
+                        $('#mapc')[0].innerHTML = '<iframe src="https://mapsengine.google.com/map/embed?mid=z3KGS9jRpI24.kBmlCB8DJqKo" id="map5" width="100%"></iframe>';
+                        $('#mapc').show();
+
+                        var h = $('html').height() - 135;
+                        $('#map5').css ('height', h);
+
+                        $('#navbarou').hide();
+                        $('#navbarmap').show();
+                        $('#backbutton').show();  
+                        whereami ='Pharmacie'          
+            });
+
+            $('#navbarmap ul li:nth-child(2) a').click (function(){
+
+                switch (whereami)
+                {
+                    case 'hopital':
+                         document.location.href = 'http://google.com/'
+                    break;
+
+                    case 'InfirmereIndependante':
+                         document.location.href = 'http://google.com/map'
+                    break 
+
+                    case 'Medecin':
+                         document.location.href = 'http://google.com/'
+                    break;
+
+                    case 'BorneArretUrgence':
+                         document.location.href = 'http://google.com/'
+                    break;
+
+                    case 'Pharmacie':
+                         document.location.href = 'http://google.com/'
+                    break;
+
+
+                }
+
+
+            });
+
             app.initialize();
         </script>
     </body>
