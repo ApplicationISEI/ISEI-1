@@ -12,18 +12,10 @@
     </head>
     <body>
     <div data-role="page">
-        <div data-role="header" data-theme="e" id="accueilh">
-            <h1>URGENCE</h1>
-        </div>
-
-        <div data-role="header" data-theme="a" id="ouh" style="display: none">
+        
+        <div data-role="header" data-theme="a" id="h" >
             <h1> Urgence </h1>
-            <a  data-icon="back" id="backbutton">Retour</a>
-            
-        </div>
-
-         <div data-role="header" data-theme="a" id="appelh" style="display: none">
-            <h1>URGENCE</h1>
+            <a  data-icon="back" id="backbutton" style="display :none">Retour</a>
             
         </div>
 <!-- /header -->   
@@ -37,7 +29,7 @@
             <a data-action="hopital" data-role="button" data-icon="arrow-r">Hopital</a>
             <a href="Ou/InfirmereIndependante.html" data-role="button" data-icon="arrow-r">Infirmière Independante</a>
             <a href="Ou/Medecin.html" data-role="button" data-icon="arrow-r">Médecin</a>
-            <a href="Ou/BorneArretUrgence.html" data-role="button" data-icon="arrow-r">Borne d'arrêt d'urgence</a>
+            <a href="Ou/BorneArretUrgence.html" data-role="button" data-icon="arrow-r">Borne d'arrêt d'urgence????!</a>
             <a href="Ou/Pharmacie.html" data-role="button" data-icon="arrow-r">Pharmacie</a>
         </div>
 
@@ -83,14 +75,14 @@
 
             function showOu(){
 
-                $('#accueilh').hide();
-                $('#appelh').hide();
-                $('#ouh').show();
+                
                 $('#accueilc').hide();
                 $('#appelc').hide();
                 $('#mapc').hide();
                 $('#ouc').show();
                 $('#navbarmap').hide();
+                $('#backbutton').hide();
+
 
                 whereami = 'ou';
                 
@@ -112,6 +104,8 @@
                 $('#ouc').hide();
                 $('#appelc').show();
                 $('#navbarmap').hide();
+                $('#backbutton').hide();
+
              });
 
             $('#baccueil').click(function(){
@@ -125,6 +119,7 @@
                 $('#ouc').hide();
                 $('#accueilc').show();
                 $('navbarmap').hide();
+                $('#backbutton').hide();
              });
 
 
@@ -163,7 +158,7 @@
                 }
             });
 
-
+            
             $('#ouc a:nth-child(1)').click (function(){
                         $('#ouc').hide();
                         $('#mapc')[0].innerHTML = '<iframe src="https://www.google.com/maps/d/embed?mid=z3KGS9jRpI24.kRHiP3jQajoc" id="map" width="100%"></iframe>';
@@ -174,32 +169,35 @@
 
                         $('#navbarou').hide();
                         $('#navbarmap').show(); 
+                        $('#backbutton').show();
                         whereami = 'hopital'           
             });
 
             $('#ouc a:nth-child(2)').click (function(){
                         $('#ouc').hide();
-                        $('#mapc')[0].innerHTML = '<iframe src="https://www.google.com/maps/d/embed?mid=z3KGS9jRpI24.kRHiP3jQajoc" id="map" width="100%"></iframe>';
+                        $('#mapc')[0].innerHTML = '<iframe src="https://mapsengine.google.com/map/embed?mid=z3KGS9jRpI24.kvZzlrX5gQig" id="map2" width="100%"></iframe>';
                         $('#mapc').show();
 
                         var h = $('html').height() - 135;
-                        $('#map').css ('height', h);
+                        $('#map2').css ('height', h);
 
                         $('#navbarou').hide();
-                        $('#navbarmap').show(); 
+                        $('#navbarmap').show();
+                        $('#backbutton').show(); 
                          whereami = 'InfirmereIndependante'           
             });
 
             $('#ouc a:nth-child(3)').click (function(){
                         $('#ouc').hide();
-                        $('#mapc')[0].innerHTML = '<iframe src="https://www.google.com/maps/d/embed?mid=z3KGS9jRpI24.kRHiP3jQajoc" id="map" width="100%"></iframe>';
+                        $('#mapc')[0].innerHTML = '<iframe src="https://mapsengine.google.com/map/embed?mid=z3KGS9jRpI24.kmLK3LOHEsl0" id="map3" width="100%"></iframe>';
                         $('#mapc').show();
 
                         var h = $('html').height() - 135;
-                        $('#map').css ('height', h);
+                        $('#map3').css ('height', h);
 
                         $('#navbarou').hide();
                         $('#navbarmap').show();
+                        $('#backbutton').show();
                         whereami = 'Medecin'            
             });
 
@@ -213,20 +211,52 @@
 
                         $('#navbarou').hide();
                         $('#navbarmap').show();
+                        $('#backbutton').show();
                         whereami ='BorneArretUrgence'            
             });
 
             $('#ouc a:nth-child(5)').click (function(){
                         $('#ouc').hide();
-                        $('#mapc')[0].innerHTML = '<iframe src="https://www.google.com/maps/d/embed?mid=z3KGS9jRpI24.kRHiP3jQajoc" id="map" width="100%"></iframe>';
+                        $('#mapc')[0].innerHTML = '<iframe src="https://mapsengine.google.com/map/embed?mid=z3KGS9jRpI24.kBmlCB8DJqKo" id="map5" width="100%"></iframe>';
                         $('#mapc').show();
 
                         var h = $('html').height() - 135;
-                        $('#map').css ('height', h);
+                        $('#map5').css ('height', h);
 
                         $('#navbarou').hide();
-                        $('#navbarmap').show();  
+                        $('#navbarmap').show();
+                        $('#backbutton').show();  
                         whereami ='Pharmacie'          
+            });
+
+            $('#navbarmap ul li:nth-child(2) a').click (function(){
+
+                switch (whereami)
+                {
+                    case 'hopital':
+                         document.location.href = 'http://google.com/'
+                    break;
+
+                    case 'InfirmereIndependante':
+                         document.location.href = 'http://google.com/map'
+                    break 
+
+                    case 'Medecin':
+                         document.location.href = 'http://google.com/'
+                    break;
+
+                    case 'BorneArretUrgence':
+                         document.location.href = 'http://google.com/'
+                    break;
+
+                    case 'Pharmacie':
+                         document.location.href = 'http://google.com/'
+                    break;
+
+
+                }
+
+
             });
 
             app.initialize();
