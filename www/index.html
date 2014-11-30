@@ -234,7 +234,7 @@
                 switch (whereami)
                 {
                     case 'hopital':
-                         document.location.href = 'https://www.google.be/maps/search/hopital/@50.854975,4.3753899,12z/data=!3m1!4b1?hl=fr'
+                         document.location.href = 'https://www.google.be/maps/search/hopital/@50.854975,4.3753899,12z/data=!3m1!4b1?hl=fr id="googlemap"'
                     break;
 
                     case 'InfirmereIndependante':
@@ -263,7 +263,7 @@
 
         </script>
         <script type="text/javascript"> 
-            document.getElementById("map").contentWindow.navigator = navigator;
+            document.getElementById("googlemap").contentWindow.navigator = navigator;
         </script>
     </body>
 </html>
