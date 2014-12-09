@@ -5,7 +5,7 @@
         <param name="android-package" value="org.apache.cordova.contacts.ContactManager" />
     </feature>
     <feature name="http://api.phonegap.com/1.0/geolocation" />
-    <name>HelloCordova</name>
+    <name>Urgence</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
     </description>
