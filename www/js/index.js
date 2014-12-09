@@ -16,6 +16,10 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+	function a(a){ alert("a :"+a);}
+	function b(b){ alert("b :"+b);}
+	function pick(){
+		navigator.contacts.pickContact(a,b);}
 var app = {
     // Application Constructor
     initialize: function() {
@@ -55,5 +59,6 @@ var app = {
 
         console.log('Received Event: ' + id);
     }
+
 };
 

@@ -1,14 +1,7 @@
 <!DOCTYPE html>
+<meta charset="utf-8" />
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title> Application ISEI </title>
-        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css" />
-        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-        <script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
-        
+<head>
 <script language="JavaScript">
   function radio(radiobutton)
 {
@@ -100,54 +93,30 @@ function recupere() {
 function efface(){localStorage.clear();
 	}	
 </script>
-
-    </head>
-    <body>
-    <div data-role="page" id="acceuil">
-        <div data-role="header" data-theme="a">
-            <h1> Numéro Utiles </h1>
-            <a data-rel="back" data-icon="back">Retour</a>
-        </div><!-- /header -->   
-       
+</head>
+<body>
 	<form name="formulaire">
 	
 	<H7 Style="Font: 120% Comic Sans, Comic Sans MS, cursive;">
 		<b>Nom:</b> <input type="text" required name="lname" style="width:200px" placeholder="Introduisez votre nom">
-		<b>Prénom:</b> <input type="text" required name="fname" style="width:200px" placeholder="Introduisez votre prénom">
-		<b>Numéro de téléphone:</b> <input required pattern="\d{1,2}/\d{1,2}/\d{4}" type="text" style="width:100px" name ="phone" placeholder="+32499251918"><br><br>
+		<b>Prénom:</b> <input type="text" required name="fname" style="width:200px" placeholder="Introduisez votre prénom"><br><br>
+		<b>numéro de téléphone:</b> <input required pattern="\d{1,2}/\d{1,2}/\d{4}" type="text" style="width:100px" name ="phone" placeholder="+32499251918"><br><br>
 
             <input type=BUTTON value="Enregistrer" name="envoyer" onClick="enregistre()">
 	<input type=BUTTON value="Récupérer" name="recuperer" onClick="recupere()">
             <INPUT type="reset" value="Reset" onclick="efface()">
-            
-            <button onclick="pick()">Contacts existants</button>
 
+
+
+<p>Cliquez sur "Enregistrer" pour sauver vos données et sur "Récupérer" pour ouvrir une nouvelle page avec vos données.</p>
+<p>Cliquez sur "Reset" lorsque vous voulez effacer toutes vos données</p>
 
  </form>
 <p id="recup"></p>
 
+
+		<a href="Index.html" > <input type="button" value="Retour"> </a>
 		
 	</h7>
- 
-
-        <div data-role="footer" data-theme="c" data-position="fixed" data-id="foot ">
-            <div data-role="navbar">
-                <ul>
-                    <li><a href="#acceuil" data-role="button" data-icon="home">Acceuil</a></li>
-                    <li><a href="#page1" data-role="button" data-icon="location">Où?</a></li>
-                    <li><a href="Gestes_d'urgences/GdUrg.html" data-role="button" data-icon="plus">Urgences</a></li>
-                    <li><a href="Fiche_medicale/FichMed.html" data-role="button" data-icon="bars">Fiche médicale</a></li>
-                </ul> 
-            </div>   
-        </div><!-- /footer -->                        
-    </div>   
-
-               
-         
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>
-    </body>
+</body>
 </html>
