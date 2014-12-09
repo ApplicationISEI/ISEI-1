@@ -22,35 +22,91 @@
 <!-- /header -->   
 
         <div data-role="content" id="accueilc">
-            <h1><center>Bievenue dans le projet android</center></h1>
-            <center>En partenariat avec l'ISEI</center>
+            <a href="index.html#page2" data-role="button" data-icon="Telephone"></a>
+            <a  data-role="button" data-icon="Geoloc" id="showgeo"></a>
         </div>
 
         <div data-role="content" id="ouc" style="display: none">
             <a data-action="hopital" data-role="button" data-icon="arrow-r">Hopital</a>
-            <a href="Ou/InfirmereIndependante.html" data-role="button" data-icon="arrow-r">Infirmière Independante</a>
-            <a href="Ou/Medecin.html" data-role="button" data-icon="arrow-r">Médecin</a>
-            <a href="Ou/BorneArretUrgence.html" data-role="button" data-icon="arrow-r">Borne d'arrêt d'urgence???</a>
-            <a href="Ou/Pharmacie.html" data-role="button" data-icon="arrow-r">Pharmacie</a>
+            <a data-role="button" data-icon="arrow-r">Infirmière Independante</a>
+            <a data-role="button" data-icon="arrow-r">Médecin</a>
+            <a data-role="button" data-icon="arrow-r">Pharmacie</a>
         </div>
 
         <div data-role="content" id="mapc" style="display: none"></div>
 
 
         <div data-role="content" id="appelc" style="display: none">
-            <a href="Appels/RepertoirePrive.html" data-role="button" data-icon="arrow-r">Répertoire Privé</a>
-            <a href="Appels/RepertoireUrgence.html" data-role="button" data-icon="arrow-r">Répertoire Urgence</a>
-            <a href="Appels/NumeroUtiles.html" data-role="button" data-icon="arrow-r">Numéro Utiles</a>
-            <a href="Appels/Internet.html" data-role="button" data-icon="arrow-r">Internet</a>
+
+
+            <ul data-role="listview" data-theme="a" data-inset="true">
+                <li> <a> 
+                    <img src="img/rprive.png">
+                    <h2>Répertoire Privé</h2> </a>
+                </li> 
+            
+                <li> <a>
+                    <img src="img/urg.png"> 
+                    <h2>Répertoire d'urgences</h2> </a>
+                </li>
+
+                <li> <a> 
+                    <img src="img/numut.png"> 
+                    <h2>Numéros Utiles</h2> </a>
+                </li>   
+
+                <li> <a> 
+                    <img src="img/aro.png"> 
+                    <h2>Internet</h2> </a>
+                </li> 
+            </ul>
+
         </div>
+        
+        <div data-role="content" id="rurgencec" style="display: none">
+
+                    <ul data-role="listview" data-inset="true" data-icon="phone" data-theme="d">
+                            <li><a href="tel:112" data-position-to="window">
+                                <img src="img/cent12.png">
+                                <h2>Urgences</h2>
+                                </a>
+                            </li>
+                            
+                            <li><a href="tel:101" data-position-to="window">
+                                <img src="img/police.png">
+                                <h2>Police</h2>
+                                </a>
+                            </li>
+                        
+                            <li><a href="tel:100" data-position-to="window">
+                                <img src="img/Ppier.png">
+                                <h2>Pompiers</h2>
+                                </a>
+                            </li>
+                         
+                            <li><a href="tel:070245245" data-position-to="window">
+                                <img src="img/poison.png">
+                                <h2>Centre Anti-Poison</h2>
+                                </a> 
+                            </li>
+
+                            <li><a href="tel:105" data-position-to="window">
+                                <img src="img/Xred.png">
+                                <h2>Croix Rouge</h2>
+                                </a>
+                            </li>
+                    </ul>        
+        </div>
+
 <!-- /content -->    
 
-        <div data-role="footer" data-theme="c" data-position="fixed" data-id="foot " id="navbar">
+        <div data-role="footer" data-theme="c" data-position="fixed" data-id="foot " id="navbar" style="display: none">
             <div data-role="navbar">
                 <ul>
-                    <li><a class="ui-btn-active ui-state-persist" data-role="button" data-icon="home" id="baccueil">Accueil</a></li>
                     <li><a data-role="button" data-icon="location" id="bou">où ?</a></li>
                     <li><a data-role="button" data-icon="phone" id="bappel">Appels</a></li>
+                    <li><a data-role="button" data-icon="plus" id="burgence">Urgence</a></li>
+                    <li><a data-role="button" data-icon="bars" id="bfiche">Fiche médical</a></li>
                 </ul> 
             </div>    
         </div>
@@ -82,20 +138,29 @@
                 $('#ouc').show();
                 $('#navbarmap').hide();
                 $('#backbutton').hide();
+                $('#navbar').show();
+                $('#navbar ul li:nth-child(2) a').removeClass("ui-btn-active ui-state-persist")
+                $('#navbar ul li:nth-child(1) a').addClass("ui-btn-active ui-state-persist")
+                $('#navbar ul li:nth-child(3) a').removeClass("ui-btn-active ui-state-persist")
+                $('#navbar ul li:nth-child(4) a').removeClass("ui-btn-active ui-state-persist")
 
 
                 whereami = 'ou';
                 
                // $('#navbaraccueil ul li:nth-child(2) a').addClass("ui-btn-active ui-state-persist")
               //$('#navbaraccueil ul li:nth-child(1) a').removeClass("ui-btn-active ui-state-persist")
-                }
+                };
 
 
             $('#bou').click(showOu);  
 
-            $('#bappel').click(function(){
-               
+            $('#showgeo').click(showOu);  
 
+            $('#bappel').click(showAppel) ;
+
+
+               
+            function showAppel(){
 
                 $('#accueilh').hide();
                 $('#ouh').hide();
@@ -105,29 +170,16 @@
                 $('#appelc').show();
                 $('#navbarmap').hide();
                 $('#backbutton').hide();
+                $('#navbar ul li:nth-child(1) a').removeClass("ui-btn-active ui-state-persist")
+                $('#navbar ul li:nth-child(3) a').removeClass("ui-btn-active ui-state-persist")
+                $('#navbar ul li:nth-child(2) a').addClass("ui-btn-active ui-state-persist")
+                $('#navbar ul li:nth-child(4) a').removeClass("ui-btn-active ui-state-persist")
 
-             });
-
-            $('#baccueil').click(function(){
-               
-
-
-                $('#appelh').hide();
-                $('#ouh').hide();
-                $('#accuelh').show();
-                $('#appelc').hide();
-                $('#ouc').hide();
-                $('#accueilc').show();
-                $('navbarmap').hide();
-                $('#backbutton').hide();
-             });
+                whereami = 'appel';
 
 
 
-
-        
-            
-            var whereami = 'home';             
+             };            
 
 
             $('#backbutton').click(function(){
@@ -146,13 +198,27 @@
                         showOu();
                     break;
 
-                    case 'BorneArretUrgence':
-                        showOu();
-                    break;
-
                     case 'Pharmacie':
                         showOu();
                     break;
+
+                    case 'rprive' :
+                        showAppel();
+                    break;
+
+                    case 'rurgence' :
+                        showAppel();
+                    break;
+
+                    case 'numutile' :
+                        showAppel();
+                    break;
+
+                    case 'internet' :
+                        showAppel();
+                    break;
+                    
+
 
 
                 }
@@ -167,7 +233,7 @@
                         var h = $('html').height() - 135;
                         $('#map').css ('height', h);
 
-                        $('#navbarou').hide();
+                        $('#navbar').hide();
                         $('#navbarmap').show(); 
                         $('#backbutton').show();
                         whereami = 'hopital'           
@@ -181,7 +247,7 @@
                         var h = $('html').height() - 135;
                         $('#map2').css ('height', h);
 
-                        $('#navbarou').hide();
+                        $('#navbar').hide();
                         $('#navbarmap').show();
                         $('#backbutton').show(); 
                          whereami = 'InfirmereIndependante'           
@@ -195,27 +261,15 @@
                         var h = $('html').height() - 135;
                         $('#map3').css ('height', h);
 
-                        $('#navbarou').hide();
+                        $('#navbar').hide();
                         $('#navbarmap').show();
                         $('#backbutton').show();
                         whereami = 'Medecin'            
             });
 
+        
+
             $('#ouc a:nth-child(4)').click (function(){
-                        $('#ouc').hide();
-                        $('#mapc')[0].innerHTML = '<iframe src="https://www.google.com/maps/d/embed?mid=z3KGS9jRpI24.kRHiP3jQajoc" id="map" width="100%"></iframe>';
-                        $('#mapc').show();
-
-                        var h = $('html').height() - 135;
-                        $('#map').css ('height', h);
-
-                        $('#navbarou').hide();
-                        $('#navbarmap').show();
-                        $('#backbutton').show();
-                        whereami ='BorneArretUrgence'            
-            });
-
-            $('#ouc a:nth-child(5)').click (function(){
                         $('#ouc').hide();
                         $('#mapc')[0].innerHTML = '<iframe src="https://mapsengine.google.com/map/embed?mid=z3KGS9jRpI24.kBmlCB8DJqKo" id="map5" width="100%"></iframe>';
                         $('#mapc').show();
@@ -223,11 +277,54 @@
                         var h = $('html').height() - 135;
                         $('#map5').css ('height', h);
 
-                        $('#navbarou').hide();
+                        $('#navbar').hide();
                         $('#navbarmap').show();
                         $('#backbutton').show();  
                         whereami ='Pharmacie'          
             });
+
+            $('#appelc ul li:nth-child(1) a').click (function(){ 
+                        $('#appelc').hide();
+                        $('#backbutton').show();  
+
+
+
+
+                        whereami ='rprive'
+            });
+
+            $('#appelc ul li:nth-child(2) a').click (function(){ 
+                        $('#appelc').hide();
+                        $('#backbutton').show(); 
+                        $('#rurgencec').show();
+
+
+
+
+
+                        whereami ='rurgence'
+            });
+
+            $('#appelc ul li:nth-child(3) a').click (function(){ 
+                        $('#appelc').hide();
+                        $('#backbutton').show();  
+
+
+
+
+                        whereami ='numutile'
+            });
+
+            $('#appelc ul li:nth-child(4) a').click (function(){ 
+                        $('#appelc').hide();
+                        $('#backbutton').show();  
+
+
+
+
+                        whereami ='internet'
+            });
+
 
             $('#navbarmap ul li:nth-child(1) a').click (function(){
 
