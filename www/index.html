@@ -22,7 +22,7 @@
 <!-- /header -->   
 
         <div data-role="content" id="accueilc">
-            <a href="index.html#page2" data-role="button" data-icon="Telephone"></a>
+            <a  data-role="button" data-icon="Telephone" id="showtel"></a>
             <a  data-role="button" data-icon="Geoloc" id="showgeo"></a>
         </div>
 
@@ -98,6 +98,70 @@
                     </ul>        
         </div>
 
+        <div data-role="content" id="numutilec" style="display: none">
+
+          <ul data-role="listview" data-inset="true" data-icon="phone" data-theme="d">
+            
+            <li><a href="tel:105" data-position-to="window" >
+                <img src="img/ambu.png">
+                <h2>Transport ambulance (non urgent)</h2>
+                </a>
+            </li>
+
+             
+            <li><a href="tel:116000" data-position-to="window">
+                <img src="img/chfocus.png">
+                <h2>Child Focus</h2>
+                </a>
+            </li>
+
+                    
+            <li><a href="tel:022686200" data-position-to="window">
+                <img src="img/Ppier.png">
+                <h2>Centre Des Grands Brulés</h2>
+                </a>
+            </li>
+
+                     
+            <li><a href="tel:022686200" data-position-to="window" >
+                <img src="img/drugs.png">
+                <h2>Info-Drogues</h2>
+                </a>
+            </li>
+
+                                    
+            <li><a href="tel:1307" data-position-to="window">
+                <img src="img/mgarde.png">
+                <h2>Médecin De Garde</h2>
+                </a>
+            </li>
+        
+                                            
+            <li><a href="tel:090010500" data-position-to="window" >
+                <img src="img/phgarde.png">
+                <h2>Pharmacie De Garde</h2>
+                </a>
+             </li>
+        
+                             
+            <li><a href="tel:023494949"data-position-to="window">
+                <img src="img/cab.png">
+                <h2>Taxi (vert)</h2>
+                </a> 
+            </li>
+
+          </ul> 
+
+        </div>   
+
+        <div data-role="content" id="internetc" style="display: none">
+
+            <a href="http://www.twitter.com/" data-role="button" data-icon="Twitter"></a>
+            <a href="http://www.facebook.com/" data-role="button" data-icon="Facebook"></a>
+            <a href="http://www.plus.google.com/" data-role="button" data-icon="GooglePlus"></a>
+
+        </div>    
+
 <!-- /content -->    
 
         <div data-role="footer" data-theme="c" data-position="fixed" data-id="foot " id="navbar" style="display: none">
@@ -139,6 +203,9 @@
                 $('#navbarmap').hide();
                 $('#backbutton').hide();
                 $('#navbar').show();
+                $('#rurgencec').hide();
+                $('#numutilec').hide();
+                $('#internetc').hide();
                 $('#navbar ul li:nth-child(2) a').removeClass("ui-btn-active ui-state-persist")
                 $('#navbar ul li:nth-child(1) a').addClass("ui-btn-active ui-state-persist")
                 $('#navbar ul li:nth-child(3) a').removeClass("ui-btn-active ui-state-persist")
@@ -154,9 +221,11 @@
 
             $('#bou').click(showOu);  
 
-            $('#showgeo').click(showOu);  
+            $('#showgeo').click(showOu); 
 
-            $('#bappel').click(showAppel) ;
+            $('#showtel').click(showAppel);
+
+            $('#bappel').click(showAppel);
 
 
                
@@ -168,8 +237,12 @@
                 $('#accueilc').hide();
                 $('#ouc').hide();
                 $('#appelc').show();
+                $('#navbar').show();
                 $('#navbarmap').hide();
                 $('#backbutton').hide();
+                $('#rurgencec').hide();
+                $('#numutilec').hide();
+                $('#internetc').hide();
                 $('#navbar ul li:nth-child(1) a').removeClass("ui-btn-active ui-state-persist")
                 $('#navbar ul li:nth-child(3) a').removeClass("ui-btn-active ui-state-persist")
                 $('#navbar ul li:nth-child(2) a').addClass("ui-btn-active ui-state-persist")
@@ -285,7 +358,8 @@
 
             $('#appelc ul li:nth-child(1) a').click (function(){ 
                         $('#appelc').hide();
-                        $('#backbutton').show();  
+                        $('#backbutton').show();
+                         
 
 
 
@@ -297,6 +371,7 @@
                         $('#appelc').hide();
                         $('#backbutton').show(); 
                         $('#rurgencec').show();
+                        
 
 
 
@@ -308,6 +383,7 @@
             $('#appelc ul li:nth-child(3) a').click (function(){ 
                         $('#appelc').hide();
                         $('#backbutton').show();  
+                        $('#numutilec').show();
 
 
 
@@ -318,6 +394,7 @@
             $('#appelc ul li:nth-child(4) a').click (function(){ 
                         $('#appelc').hide();
                         $('#backbutton').show();  
+                        $('#internetc').show();
 
 
 
@@ -335,19 +412,15 @@
                     break;
 
                     case 'InfirmereIndependante':
-                         document.location.href = 'http://google.com/map'
+                         document.location.href = 'https://www.google.be/maps/search/infirmière+à+domicile+bruxeles/@50.8495564,4.3589105,12z?hl=fr'
                     break 
 
                     case 'Medecin':
-                         document.location.href = 'http://google.com/'
-                    break;
-
-                    case 'BorneArretUrgence':
-                         document.location.href = 'http://google.com/'
+                         document.location.href = 'https://www.google.be/maps/search/médecin+de+bruxelles/@50.854975,4.3753899,12z/data=!3m1!4b1?hl=fr'
                     break;
 
                     case 'Pharmacie':
-                        document.location.href = "http://www.google.be/maps/search/hopital/@50.854975,4.3753899,12z/data=!3m1!4b1?hl=fr";
+                        document.location.href = 'https://www.google.be/maps/search/pharmacie+de+bruxelles/@50.854975,4.3753899,12z/data=!3m1!4b1?hl=fr';
                     break;
 
 
