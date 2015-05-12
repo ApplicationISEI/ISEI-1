@@ -1,4 +1,4 @@
-function showOu(){
+            function showOu(){
 
                 
                 $('#accueilc').hide();
@@ -24,13 +24,23 @@ function showOu(){
                 };
 
 
-            $('#bou').click(showOu);  
+        $('#bou').click(showOu);  
 
-            $('#showgeo').click(showOu); 
+        $('#showgeo').click(showOu); 
 
-            $('#showtel').click(showAppel);
+        $('#showtel').click(showAppel);
 
-            $('#bappel').click(showAppel);
+        $('#bappel').click(showAppel);
+
+        $('#burgence').click(showUrgence);
+
+        $('#bfiche').click(showFmedi);
+
+        $('#showurg').click(showUrgence);
+
+        $('#showmedi').click(showFmedi);
+
+
 
 
                
@@ -54,10 +64,59 @@ function showOu(){
                 $('#navbar ul li:nth-child(4) a').removeClass("ui-btn-active ui-state-persist")
 
                 whereami = 'appel';
+             
 
 
+             }; 
 
-             };            
+             function showUrgence(){
+
+                $('#accueilh').hide();
+                $('#ouh').hide();
+                $('#appelh').hide();
+                $('#accueilc').hide();
+                $('#ouc').hide();
+                $('#appelc').hide();
+                $('#navbar').show();
+                $('#navbarmap').hide();
+                $('#backbutton').hide();
+                $('#rurgencec').hide();
+                $('#numutilec').hide();
+                $('#internetc').hide();
+                $('#navbar ul li:nth-child(1) a').removeClass("ui-btn-active ui-state-persist");
+                $('#navbar ul li:nth-child(3) a').addClass("ui-btn-active ui-state-persist");
+                $('#navbar ul li:nth-child(2) a').removeClass("ui-btn-active ui-state-persist");
+                $('#navbar ul li:nth-child(4) a').removeClass("ui-btn-active ui-state-persist");
+
+                whereami = 'urgence'
+
+
+             }; 
+
+            function showFmedi(){
+
+                $('#accueilh').hide();
+                $('#ouh').hide();
+                $('#appelh').hide();
+                $('#accueilc').hide();
+                $('#ouc').hide();
+                $('#appelc').hide();
+                $('#navbar').show();
+                $('#navbarmap').hide();
+                $('#backbutton').hide();
+                $('#rurgencec').hide();
+                $('#numutilec').hide();
+                $('#internetc').hide();
+                $('#navbar ul li:nth-child(1) a').removeClass("ui-btn-active ui-state-persist");
+                $('#navbar ul li:nth-child(3) a').removeClass("ui-btn-active ui-state-persist");
+                $('#navbar ul li:nth-child(2) a').removeClass("ui-btn-active ui-state-persist");
+                $('#navbar ul li:nth-child(4) a').addClass("ui-btn-active ui-state-persist");
+                
+                whereami = 'fmedi'
+
+
+             };          
+         
 
 
             $('#backbutton').click(function(){
@@ -221,11 +280,11 @@ function showOu(){
                     break 
 
                     case 'Medecin':
-                         document.location.href = 'geo:https://www.google.be/maps/search/médecin+de+bruxelles/@50.854975,4.3753899,12z/data=!3m1!4b1?hl=fr'
+                         document.location.href = 'https://www.google.be/maps/search/médecin+de+bruxelles/@50.854975,4.3753899,12z/data=!3m1!4b1?hl=fr'
                     break;
 
                     case 'Pharmacie':
-                        document.location.href = 'geo:https://www.google.be/maps/search/pharmacie+de+bruxelles/@50.854975,4.3753899,12z/data=!3m1!4b1?hl=fr';
+                        document.location.href = 'https://www.google.be/maps/search/pharmacie+de+bruxelles/@50.854975,4.3753899,12z/data=!3m1!4b1?hl=fr';
                     break;
 
 

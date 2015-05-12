@@ -61,6 +61,30 @@ body {
     margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
                                    /* offset horizontal: half of text area width */
 }
+.ui-icon-Urgence {
+    background:url(../img/urgence.png) no-repeat center top; /* 170px x 200px */
+    position:absolute;             /* position in the center of the screen */
+    left:5%;
+    top:auto;
+    height:105px;                   /* text area height */
+    width:70px;                   /* text area width */
+    text-align:center;
+    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
+    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
+                                   /* offset horizontal: half of text area width */
+}
+.ui-icon-Fiche {
+    background:url(../img/fiche.png) no-repeat center top; /* 170px x 200px */
+    position:absolute;             /* position in the center of the screen */
+    left:5%;
+    top:auto;
+    height:105px;                   /* text area height */
+    width:70px;                   /* text area width */
+    text-align:center;
+    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
+    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
+                                   /* offset horizontal: half of text area width */
+}
 .ui-icon-Twitter {
     background:url(../img/Twit.png) no-repeat center top; /* 170px x 200px */
     position:absolute;             /* position in the center of the screen */
